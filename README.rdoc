@@ -31,7 +31,7 @@ Just do :
  
 And, you will get a test_result after each test, ie an object of class Failure, Error, Skip or Success. 
 
-These objects respond to  methods :klass, :method, :line, :message.
+These objects respond to  methods <b>:klass, :method, :line, :message </b>.
  
  The final result will respond to 
   :errors => array of errors
