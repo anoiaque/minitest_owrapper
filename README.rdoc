@@ -26,11 +26,11 @@ Suppose :
 Just do :
 
  result = MinitestOwrapper.run(@test_file, load_path) do |test_result|
-   puts test_result.current
-   puts test_result.current.message
-   puts test_result.current.klass
-   puts test_result.current.method
-   puts test_result.current.line
+   #test_result.current => Object of type Error, Failure, Skip, Success
+   #test_result.current.message => Error message , backtrace
+   #test_result.current.klass => Test Class
+   #test_result.current.method => Test method
+   #test_result.current.line => Line number of 
  end
  
 And, you will get a test_result after each test, ie an object of class Failure, Error, Skip or Success. 
