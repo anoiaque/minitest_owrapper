@@ -1,0 +1,75 @@
+== Overview
+
+With ruby or macruby testunit or minitest, results are damnly tied to output and you can't get result of a test as an object after 
+its execution and global tests result as an object too.
+
+This gem permit to do so, and, have result of a unit test as an TestResult object on which you can call methods 
+#success? #failures #errors #skips #current ... 
+You can be yielded this TestResult object after each test and the global TestResult after all tests.
+
+
+Note : For now it just work with macruby interpreter and minitest or testunit tests.
+It is really easy to evolve it for ruby interpreter.
+It will be done soon.
+
+== Installation
+
+  gem install minitest_owrapper
+  
+
+== Usage
+
+Suppose : 
+- @test_file is the absolute path to your test file.
+- load_path is the load path needed for your path (-I option)
+
+Just do :
+
+ result = MinitestOwrapper.run(@test_file, load_path) do |test_result|
+   puts test_result.current
+ end
+ 
+ And, you will get a test_result after each test, ie an object of class Failure, Error, Skip or Success. 
+ These objects respond to  methods :klass, :method, :line, :message.
+ 
+ The final result will respond to 
+  :errors => array of errors
+  :failures => array of failures
+  :skips => array of skips
+  :successes => array of success
+  :tests => number of tests
+  :duration => duration of the tests
+  :assertions => number of assertions
+
+Example of usage in the test file test/test_minitest_owrapper.rb
+  
+  it 'should run FakeTest and get TestResult object whith  2 failure, 1 error, 1 success, 1 skip ' do
+    load_path =  File.expand_path(File.join(File.dirname(__FILE__), '../fixtures'))
+
+    result = MinitestOwrapper.run(@test_file, load_path) do |test_result|
+      puts test_result.current
+    end
+
+    assert_equal 1, result.errors.count
+    assert_equal 2, result.failures.count
+    assert_equal 1, result.skips.count
+    assert_equal 1, result.successes.count
+    
+    assert_equal 5, result.tests
+    assert_in_delta result.duration, 1, 1
+    assert_equal 4, result.assertions
+  end
+
+
+== Dependencies
+
+minitest
+
+== TO-DOs
+
+Adapt to work with ruby interpreter.
+
+
+== Licence
+
+MIT Licence
