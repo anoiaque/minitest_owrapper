@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Philippe Cantin"]
   s.email       = ["anoiaque@gmail.com"]
   s.homepage    = "https://github.com/anoiaque/minitest_owrapper"
-  s.summary     = %q{Get tests results as an TestResult object instead tied to output}
+  s.summary     = %q{Get tests results as a TestResult object instead tied to output}
   s.description = %q{ With ruby or macruby test unit or minitest, results are damnly tied to output and you can't get result
                   of a test as an object after its execution and global tests result as an object too.
                   This gem permit to do so, and, have result of a unit test (with minitest  testunit and macruby for now but can easily be evolved
