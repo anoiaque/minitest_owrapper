@@ -27,6 +27,10 @@ Just do :
 
  result = MinitestOwrapper.run(@test_file, load_path) do |test_result|
    puts test_result.current
+   puts test_result.current.message
+   puts test_result.current.klass
+   puts test_result.current.method
+   puts test_result.current.line
  end
  
 And, you will get a test_result after each test, ie an object of class Failure, Error, Skip or Success. 
