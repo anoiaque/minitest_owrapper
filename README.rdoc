@@ -30,6 +30,7 @@ Just do :
  end
  
 And, you will get a test_result after each test, ie an object of class Failure, Error, Skip or Success. 
+
 These objects respond to  methods :klass, :method, :line, :message.
  
  The final result will respond to 
