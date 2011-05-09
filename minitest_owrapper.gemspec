@@ -4,8 +4,8 @@ require "minitest_owrapper/version"
 
 Gem::Specification.new do |s|
   s.name        = "minitest_owrapper"
-  s.version     = I18nTranslator::VERSION
-  s.platform    = Gem::Platform::MACRUBY
+  s.version     = MinitestOwrapper::VERSION
+  s.platform    = Gem::Platform::RUBY
   s.authors     = ["Philippe Cantin"]
   s.email       = ["anoiaque@gmail.com"]
   s.homepage    = "https://github.com/anoiaque/minitest_owrapper"
