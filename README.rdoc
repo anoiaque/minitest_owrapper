@@ -12,6 +12,10 @@ Note : For now it just work with macruby interpreter and minitest or testunit te
 It is really easy to evolve it for ruby interpreter.
 It will be done soon.
 
+== Code Quality Metrics
+
+{<img src="https://codeclimate.com/badge.png" />}[https://codeclimate.com/github/anoiaque/minitest_owrapper]
+
 == Installation
 
   gem install minitest_owrapper
